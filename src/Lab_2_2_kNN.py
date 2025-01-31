@@ -1,4 +1,5 @@
 # Laboratory practice 2.2: KNN classification
+from turtle import color
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -421,10 +422,10 @@ def plot_probability_histograms(y_true, y_probs, positive_label, n_bins=10):
     plt.figure(figsize=(12, 6))
     plt.subplot(2, 2, 1)
     plt.title("Positive Classification Histogram")
-    plt.hist(y_probs[y_true_mapped == 1], n_bins)
+    plt.hist(y_probs[y_true_mapped == 1], n_bins, color="green")
     plt.subplot(2, 2, 2)
     plt.title("Negative Classification Histogram")
-    plt.hist(y_probs[y_true_mapped == 0], n_bins)
+    plt.hist(y_probs[y_true_mapped == 0], n_bins, color="red")
     plt.show()
 
     return {
@@ -485,7 +486,7 @@ def plot_roc_curve(y_true, y_probs, positive_label):
         tpr.append(tp / (tp + fn) if (tp + fn) != 0 else 0.0)
         fpr.append(fp / (fp + tn) if (fp + tn) != 0 else 0.0)
 
-    plt.plot(fpr, tpr, marker="o")
+    plt.plot(fpr, tpr, marker="o", label="ROC Curve")
     plt.title("ROC Curve")
     plt.xlabel("False Positive Rate")
     plt.ylabel("True Positive Rate")
