@@ -289,7 +289,7 @@ def evaluate_classification_metrics(y_true, y_pred, positive_label):
 
     # Accuracy
     if (tp + tn + fp + fn) == 0:
-        raise DivisionByZero
+        raise ZeroDivisionError
 
     accuracy = (tp + tn) / (tp + tn + fp + fn)
 
