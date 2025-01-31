@@ -1,5 +1,4 @@
 # Laboratory practice 2.2: KNN classification
-from turtle import color
 import seaborn as sns
 import matplotlib.pyplot as plt
 
